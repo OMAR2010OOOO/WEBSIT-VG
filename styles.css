@@ -1,0 +1,1013 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Cairo', 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a192f 0%, #20314f 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* لمتصفح IE و Edge */
+    scrollbar-width: none;  /* لمتصفح Firefox */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a192f 0%, #20314f 100%);
+    pointer-events: none;
+    z-index: -1;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+header {
+    background: rgba(10, 25, 47, 0.95);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    color: #64ffda;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+    animation: textGlow 3s ease-in-out infinite;
+    font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(100, 255, 218, 0.5), 0 0 30px rgba(100, 255, 218, 0.3); }
+    100% { text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
+}
+
+main {
+    flex: 1;
+    padding: 4rem 2rem;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.product {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(145deg, #112240 0%, #0a192f 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(100, 255, 218, 0.03) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product:hover::before {
+    opacity: 1;
+}
+
+.product-features {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.feature {
+    background: rgba(100, 255, 218, 0.03);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(100, 255, 218, 0.05);
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.feature:hover {
+    transform: translateX(5px);
+    background: rgba(100, 255, 218, 0.05);
+}
+
+.product-icon {
+    font-size: 2.5rem;
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.product:hover .product-icon {
+    opacity: 1;
+}
+
+.learn-more {
+    margin-top: auto;
+    padding: 0.8rem 1.2rem;
+    background: rgba(100, 255, 218, 0.05);
+    border-radius: 8px;
+    color: #64ffda;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.learn-more:hover {
+    background: rgba(100, 255, 218, 0.1);
+}
+
+footer {
+    background: rgba(10, 25, 47, 0.95);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #8892b0;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .product-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .product:hover {
+        transform: translateY(-2px);
+    }
+
+    .product, .download-button {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.language-switch {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    background: transparent;
+    color: #64ffda;
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+.product-icon {
+    font-size: 3rem;
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+}
+
+.product-features {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.feature {
+    color: #ccd6f6;
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    background: rgba(100, 255, 218, 0.03);
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.feature:hover {
+    background: rgba(100, 255, 218, 0.05);
+    transform: translateX(5px);
+}
+
+.feature i {
+    color: #64ffda;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.feature .fa-spinner {
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #8892b0;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.social-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #7289da;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.social-links a:hover {
+    color: #7289da;
+    transform: translateY(-2px);
+    text-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
+}
+
+.learn-more i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.learn-more:hover i {
+    transform: translateX(-5px);
+}
+
+.particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, #64ffda, #7289da);
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(100, 255, 218, 0.1);
+    border: 2px solid #64ffda;
+    color: #64ffda;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: translateY(-5px);
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.loading-spinner {
+    color: #64ffda;
+    font-size: 2rem;
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, #64ffda, #7289da);
+    z-index: 1000;
+    transition: width 0.2s ease;
+    transform: translateZ(0);
+}
+
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a192f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader-content {
+    text-align: center;
+    color: #64ffda;
+}
+
+.loader-content i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.loader-content span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+}
+
+.page-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(100, 255, 218, 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(10, 25, 47, 0.95);
+    color: #64ffda;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    border: 1px solid #64ffda;
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+/* إخفاء شريط التمرير لجميع المتصفحات */
+::-webkit-scrollbar {
+    display: none;  /* لمتصفحات Chrome و Safari */
+}
+
+/* لجميع المتصفحات */
+body {
+    -ms-overflow-style: none;  /* لمتصفح IE و Edge */
+    scrollbar-width: none;  /* لمتصفح Firefox */
+}
+
+/* إضافة هذه القاعدة الجديدة للغة العربية */
+[lang="ar"] header h1 {
+    letter-spacing: 0px; /* للعربية */
+    font-size: 4rem; /* حجم أكبر قليلاً للعربية */
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700; /* خط أكثر سُمكاً */
+}
+
+.product-icon i {
+    transition: transform 0.3s ease;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.product:hover .product-icon i {
+    transform: rotate(360deg);
+}
+
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(100, 255, 218, 0.1);
+    z-index: 9999;
+}
+
+.reading-progress-bar {
+    height: 100%;
+    background: #64ffda;
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+.background-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    animation: modalSlideIn 0.3s ease;
+    direction: inherit;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #64ffda;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+.modal h2 {
+    color: #64ffda;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(100, 255, 218, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    direction: inherit;
+}
+
+.price-item:hover {
+    transform: translateX(10px);
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.duration {
+    color: #ccd6f6;
+    font-size: 1.1rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+.price {
+    color: #64ffda;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+[lang="en"] .duration {
+    font-family: 'Orbitron', sans-serif;
+}
+
+[lang="ar"] .duration {
+    font-family: 'Cairo', sans-serif;
+}
+
+.contact-dev {
+    margin-top: 2rem;
+    text-align: center;
+    display: none; /* سيتم إظهاره فقط في النسخة العربية */
+}
+
+[lang="ar"] .contact-dev {
+    display: block;
+}
+
+.contact-dev p {
+    color: #ccd6f6;
+    margin-bottom: 1rem;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem;
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    border: 1px solid #64ffda;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+.price-item {
+    cursor: pointer;
+}
+
+[lang="ar"] .price-item:hover {
+    background: rgba(100, 255, 218, 0.15);
+}
+
+/* إخفاء/إظهار أقسام الاتصال حسب اللغة */
+.contact-dev {
+    display: none;
+}
+
+.contact-discord {
+    display: none;
+}
+
+[lang="ar"] .contact-dev {
+    display: block;
+}
+
+[lang="en"] .contact-discord {
+    display: block;
+}
+
+.contact-discord {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contact-discord p {
+    color: #ccd6f6;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.discord-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem;
+    background: rgba(114, 137, 218, 0.1);
+    color: #7289da;
+    border: 1px solid #7289da;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.discord-button:hover {
+    background: rgba(114, 137, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+.discord-button i {
+    font-size: 1.2em;
+}
+
+.updating {
+    color: #ff3333;  /* لون أحمر أكثر إشراقاً */
+    font-style: normal;
+    margin-top: 2rem;
+    display: block;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: rgba(255, 51, 51, 0.15);
+    border: 2px solid #ff3333;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.updating i {
+    margin-right: 8px;
+    color: #ff3333;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+[lang="ar"] .updating i {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* إضافة وضع القراءة الليلي */
+.dark-mode {
+    --bg-color: #0a0f16;
+    --text-color: #e6f1ff;
+    --accent-color: #64ffda;
+}
+
+/* إضافة تأثيرات جديدة للمنتجات */
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(100, 255, 218, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #64ffda;
+    border: 1px solid #64ffda;
+}
+
+/* إضافة شريط تقدم دائري */
+.circular-progress {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(#64ffda var(--progress), transparent 0deg);
+    transition: --progress 0.3s ease;
+}
+
+/* إضاف تأثيرات حركية متقدمة */
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(100, 255, 218, 0.1) 50%,
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* إضافة تأثيرات للأزرار */
+.button-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+}
+
+.button-3d:active {
+    transform: translateY(2px);
+}
+
+/* تحسين أنماط زر التحميل */
+.download-button-container {
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 300px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(45deg, #64ffda, #20314f);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+}
+
+.download-button:active {
+    transform: translateY(1px);
+}
+
+.download-button i {
+    font-size: 1.4rem;
+}
+
+.button-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.2) 0%, transparent 70%);
+    animation: rotate 4s linear infinite;
+    pointer-events: none;
+}
+
+/* تحسين موضع الزر داخل المنتج */
+.product-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* تعديل المسافات بين العناصر */
+.product-features {
+    margin-bottom: 0.5rem;
+}
+
+.product-hover {
+    margin-top: auto;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* إضافة نمط للكود المجاني */
+.free-code {
+    margin: 1rem auto;
+    padding: 1rem;
+    background: rgba(100, 255, 218, 0.05);
+    border: 1px solid #64ffda;
+    border-radius: 8px;
+    text-align: center;
+    animation: glowBorder 2s infinite;
+    max-width: 300px;
+}
+
+.free-code-label {
+    color: #64ffda;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.code-text {
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background: rgba(100, 255, 218, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    user-select: all; /* يسمح للمستخدم بنسخ الكود بسهولة */
+}
+
+@keyframes glowBorder {
+    0%, 100% { border-color: rgba(100, 255, 218, 0.3); }
+    50% { border-color: rgba(100, 255, 218, 0.8); }
+}
+
+/* تحسين شكل زر اضغط للمزيد */
+.product-hover {
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.product-hover:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+}
+
+.product-hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(100, 255, 218, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.product-hover:hover::after {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+}

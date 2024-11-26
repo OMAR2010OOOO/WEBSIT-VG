@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="VG - Advanced Gaming Tools">
+    <meta property="og:description" content="Discover the power of VG's advanced gaming tools. Safe, effective software with continuous updates.">
+    <meta property="og:image" content="https://t4.ftcdn.net/jpg/04/47/02/41/360_F_447024116_YHe38BQO90fEUP0to1eVmFoDf0EuiDFu.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="VG - Advanced Gaming Tools">
+    <meta property="twitter:description" content="Discover the power of VG's advanced gaming tools. Safe, effective software with continuous updates.">
+    <meta property="twitter:image" content="https://t4.ftcdn.net/jpg/04/47/02/41/360_F_447024116_YHe38BQO90fEUP0to1eVmFoDf0EuiDFu.jpg">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <div class="page-loader">
+        <div class="loader-content">
+            <i class="fas fa-robot fa-spin"></i>
+            <span>VG</span>
+        </div>
+    </div>
+    <header>
+        <div class="language-switch">
+            <button class="lang-btn" onclick="window.location.href='ar.html'">العربية</button>
+        </div>
+        <h1>VG</h1>
+    </header>
+    <main>
+        <div class="products-container">
+            <!-- Product 1 -->
+            <div class="product">
+                <div class="product-content">
+                    <div class="product-icon">
+                        <i class="fas fa-robot"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>VG-HK</h3>
+                    <p>VG-HK product description with more details</p>
+                    <div class="product-features">
+                        <span class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Secure</span>
+                        </span>
+                        <span class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Fast and Efficient</span>
+                        </span>
+                        <span class="feature">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Continuous Updates</span>
+                        </span>
+                        <div class="free-code">
+                            <span class="free-code-label">GET FREE KEY</span>
+                            <div class="code-text">http://vgfreekey.wuaze.com</div>
+                        </div>
+                    </div>
+                    <div class="product-hover">
+                        <span class="learn-more">
+                            <i class="fas fa-arrow-right"></i>
+                            Click for more
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>VG &copy; 2024</p>
+            <div class="social-links">
+                <a href="https://discord.gg/ChXEHnRECU" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+        </div>
+    </div>
+    <div class="contact-dev">
+        <p>Contact the developer to purchase the code</p>
+        <a href="tel:01280377784" class="contact-button">
+            <i class="fas fa-phone"></i>
+            01280377784
+        </a>
+    </div>
+    <div class="contact-discord">
+        <p>Contact us on Discord to purchase the code</p>
+        <a href="https://discord.gg/ChXEHnRECU" target="_blank" class="discord-button">
+            <i class="fab fa-discord"></i>
+            Join Discord
+        </a>
+    </div>
+
+    <script>
+        // Block F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode == 123 || 
+                (event.ctrlKey && event.shiftKey && event.keyCode == 73) || 
+                (event.ctrlKey && event.keyCode == 85)) {
+                event.preventDefault(); // Disable F12, Ctrl+Shift+I, Ctrl+U
+            }
+        });
+
+        // Block Right-Click (Context Menu)
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Prevent right-click
+        });
+    </script>
+</body>
+</html>

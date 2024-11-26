@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/ar/">
+    <meta property="og:title" content="VG - أدوات الألعاب المتقدمة">
+    <meta property="og:description" content="اكتشف قوة أدوات VG المتقدمة للألعاب. برامج آمنة وفعالة مع تحديثات مستمرة.">
+    <meta property="og:image" content="https://d.top4top.io/p_3243stvuz1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/ar/">
+    <meta property="twitter:title" content="VG - أدوات الألعاب المتقدمة">
+    <meta property="twitter:description" content="اكتشف قوة أدوات VG المتقدمة للألعاب. برامج آمنة وفعالة مع تحديثات مستمرة.">
+    <meta property="twitter:image" content="https://d.top4top.io/p_3243stvuz1.png">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <div class="page-loader">
+        <div class="loader-content">
+            <i class="fas fa-robot fa-spin"></i>
+            <span>VG</span>
+        </div>
+    </div>
+    <header>
+        <div class="language-switch">
+            <!-- زر التبديل إلى الإنجليزية -->
+            <button class="lang-btn" onclick="window.location.href='en.html'">English</button>
+        </div>
+        <h1>VG</h1>
+    </header>
+    <main>
+        <div class="products-container">
+            <div class="product">
+                <div class="product-content">
+                    <div class="product-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>VG-BP</h3>
+                    <p>وصف منتج VG-BP مع مزيد من التفاصيل</p>
+                    <span class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>آمن 100%</span>
+                    </span>
+                    <span class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>سريع وفعال</span>
+                    </span>
+                    <span class="feature">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>تحديثات مستمرة</span>
+                    </span>
+                    <div class="free-code">
+                        <span class="free-code-label">لي الحصل كود مجاني</span>
+                        <div class="code-text">http://vgfreekey.wuaze.com</div>
+                    </div>
+                </div>
+                <div class="product-hover">
+                    <span class="learn-more">
+                        <i class="fas fa-arrow-right"></i>
+                        انقر للمزيد
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>VG &copy; 2024</p>
+            <div class="social-links">
+                <a href="https://discord.gg/ChXEHnRECU" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>VG-LOOP</h2>
+            <div class="price-list">
+                <div class="price-item">
+                    <span class="duration">أسبوع</span>
+                    <span class="price">15$</span>
+                </div>
+                <div class="price-item">
+                    <span class="duration">شهر</span>
+                    <span class="price">30$</span>
+                </div>
+                <div class="price-item">
+                    <span class="duration">موسم</span>
+                    <span class="price">50$</span>
+                </div>
+                <div class="price-item">
+                    <span class="duration">مدى الحياة</span>
+                    <span class="price">100$</span>
+                </div>
+            </div>
+            <div class="contact-dev">
+                <p>تواصل مع المطور لشراء الكود</p>
+                <a href="tel:01280377784" class="contact-button">
+                    <i class="fas fa-phone"></i>
+                    01280377784
+                </a>
+            </div>
+            <div class="contact-discord">
+                <p>تواصل معنا على Discord لشراء الكود</p>
+                <a href="https://discord.gg/VGofficial" target="_blank" class="discord-button">
+                    <i class="fab fa-discord"></i>
+                    انضم إلى Discord
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // منع F12 واختصارات معينة
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode == 123 || 
+                (event.ctrlKey && event.shiftKey && event.keyCode == 73) || 
+                (event.ctrlKey && event.keyCode == 85)) {
+                event.preventDefault(); // منع F12 و Ctrl+Shift+I و Ctrl+U
+            }
+        });
+
+        // منع النقر بالزر الأيمن
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // منع القائمة السياقية (النقر بزر الفأرة الأيمن)
+        });
+    </script>
+</body>
+</html>
